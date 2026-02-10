@@ -37,7 +37,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
  
- 
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final dataProvider = context.read<DataProvider>();
+      dataProvider.fetchBranches();
+      dataProvider.fetchTreatments();
+    });
+  }
 
   void _calculateBalance() {
     double total = double.tryParse(_totalAmountController.text) ?? 0;
