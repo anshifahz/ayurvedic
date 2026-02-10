@@ -18,12 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String _sortBy = 'Date';
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<DataProvider>().fetchPatients();
-    });
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
