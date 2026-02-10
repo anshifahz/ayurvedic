@@ -26,7 +26,7 @@ class ApiService {
           _token = data['token'];
           return _token;
         } else {
-          return null; // Or throw error with message
+          return null; 
         }
       } else {
         throw Exception('Failed to login');
@@ -50,7 +50,7 @@ class ApiService {
         final data = json.decode(response.body);
         if (data['status'] == true) {
           final List<dynamic> patientList =
-              data['patient']; // Check actual key in response
+              data['patient']; 
           return patientList.map((json) => Patient.fromJson(json)).toList();
         } else {
           return [];
@@ -103,7 +103,7 @@ class ApiService {
         final data = json.decode(response.body);
         if (data['status'] == true) {
           final List<dynamic> treatments =
-              data['treatments']; // Check actual key
+              data['treatments']; 
           return treatments.map((json) => Treatment.fromJson(json)).toList();
         } else {
           return [];

@@ -3,7 +3,7 @@ class Patient {
   final String name;
   final String date;
   final String? time;
-  final String user; // executive or created_by
+  final String user; 
   final String payment;
   final String? phone;
   final String? address;
@@ -38,8 +38,8 @@ class Patient {
           ? json['id']
           : int.tryParse(json['id'].toString()) ?? 0,
       name: json['name'] ?? '',
-      date: json['date_nd_time'] ?? '', // Assuming this field contains date
-      time: json['time'], // If separate
+      date: json['date_nd_time'] ?? '', 
+      time: json['time'], 
       user: json['user'] ?? '',
       payment: json['payment'] ?? '',
       phone: json['phone'],
@@ -48,8 +48,8 @@ class Patient {
       discountAmount: double.tryParse(json['discount_amount'].toString()),
       advanceAmount: double.tryParse(json['advance_amount'].toString()),
       balanceAmount: double.tryParse(json['balance_amount'].toString()),
-      branchName: json['branch_name'], // or branch object
-      treatmentName: json['treatment_name'], // or list of treatments details
+      branchName: json['branch_name'], 
+      treatmentName: json['treatment_name'], 
     );
   }
 }

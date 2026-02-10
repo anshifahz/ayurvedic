@@ -95,8 +95,7 @@ class DataProvider with ChangeNotifier {
     notifyListeners();
 
     try {
-      // Format date as DD/MM/YYYY-HH:MM AM/PM
-      // Input date is already DD/MM/YYYY
+      
       final String amPm = int.parse(hour) >= 12 ? 'PM' : 'AM';
       final String formattedHour =
           (int.parse(hour) % 12 == 0 ? 12 : int.parse(hour) % 12)

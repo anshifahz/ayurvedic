@@ -38,56 +38,11 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: const Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: [
-          Consumer<AuthProvider>(
-            builder: (context, auth, child) {
-              return IconButton(
-                icon: const Icon(Icons.logout, color: Colors.black),
-                onPressed: () async {
-                  await auth.logout();
-                  if (context.mounted) {
-                    Navigator.of(context).pushAndRemoveUntil(
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                      (route) => false,
-                    );
-                  }
-                },
-              );
-            },
-          ),
-          Stack(
-            alignment: Alignment.topRight,
-            children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.notifications_none_outlined,
-                  color: Colors.black,
-                  size: 28,
-                ),
-                onPressed: () {},
-              ),
-              Positioned(
-                right: 12,
-                top: 12,
-                child: Container(
-                  height: 8,
-                  width: 8,
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(width: 8),
-        ],
+       
+
       ),
       body: Column(
         children: [
-          // Search Bar Section
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
@@ -192,7 +147,6 @@ class _HomeScreenState extends State<HomeScreen> {
           const SizedBox(height: 16),
           const Divider(thickness: 1, color: Color(0xFFE0E0E0), height: 1),
 
-          // Booking List with Consumer and RefreshIndicator
           Expanded(
             child: Consumer<DataProvider>(
               builder: (context, data, child) {
@@ -376,7 +330,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
 
-          // Register Now Button at Bottom
+
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(

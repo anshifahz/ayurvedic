@@ -122,7 +122,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         const SizedBox(height: 16),
                         _buildLabel('Treatments'),
 
-                        // Dynamic Treatment List
+                        
                         ..._selectedTreatments.asMap().entries.map((entry) {
                           int idx = entry.key;
                           var treatment = entry.value;
@@ -131,7 +131,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
                         const SizedBox(height: 12),
 
-                        // Add Treatments Button
+                      
                         SizedBox(
                           width: double.infinity,
                           height: 48,
@@ -306,7 +306,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     );
 
     if (success && mounted) {
-      // Generate PDF with safety
+      
       try {
         await PdfService.generateRegistrationPdf(
           name: _nameController.text,

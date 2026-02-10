@@ -26,13 +26,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Medical/Teal Theme Colors matching the image
-    const primaryColor = Color(0xFF006633); // Dark Green from image
+    
+    const primaryColor = Color(0xFF006633); 
 
     return Scaffold(
       body: Stack(
         children: [
-          // 1. Full Screen Background with Blur
+          
           Positioned.fill(
             child: ImageFiltered(
               imageFilter: ui.ImageFilter.blur(sigmaX: 5, sigmaY: 5),
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
-          // 3. Logo in the center of the top background area
+          
           Positioned(
             top: 0,
             left: 0,
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
           ),
 
-          // 2. White Form Container (Bottom Half)
+        
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Headline
+                 
                     Text(
                       'Login Or Register To Book Your Appointments',
                       style: TextStyle(
@@ -84,13 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 32),
 
-                    // Login Form
                     Form(
                       key: _formKey,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // Username Field
+                          
                           const Text(
                             'Username',
                             style: TextStyle(
@@ -124,7 +123,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           const SizedBox(height: 24),
 
-                          // Password Field
                           const Text(
                             'Password',
                             style: TextStyle(
@@ -176,7 +174,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     const SizedBox(height: 40),
 
-                    // Login Button with Consumer
                     Consumer<AuthProvider>(
                       builder: (context, auth, child) {
                         return SizedBox(
@@ -241,7 +238,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     const SizedBox(height: 40),
 
-                    // Footer Terms
                     Center(
                       child: RichText(
                         textAlign: TextAlign.center,

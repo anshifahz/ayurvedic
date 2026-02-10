@@ -16,13 +16,12 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image
           Positioned.fill(
             child: Image.asset(
               'assets/images/splash_bg.png',
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
-                // Fallback if image is missing
+                
                 return Container(
                   color: Colors.teal.shade900,
                   child: const Center(
@@ -36,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
               },
             ),
           ),
-          // Note: Overlay removed as the background image contains the full design.
+
         ],
       ),
     );

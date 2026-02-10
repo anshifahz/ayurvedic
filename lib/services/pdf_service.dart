@@ -22,7 +22,6 @@ class PdfService {
     final font = await PdfGoogleFonts.interRegular();
     final fontBold = await PdfGoogleFonts.interBold();
 
-    // Load Logo
     final logoImage = pw.MemoryImage(
       (await rootBundle.load('assets/images/logo.png')).buffer.asUint8List(),
     );
@@ -34,7 +33,7 @@ class PdfService {
         build: (pw.Context context) {
           return pw.Stack(
             children: [
-              // Background Logo
+              
               pw.Center(
                 child: pw.Opacity(
                   opacity: 0.1,
@@ -44,7 +43,7 @@ class PdfService {
               pw.Column(
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  // Header section
+                  
                   pw.Row(
                     mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
                     children: [
@@ -80,7 +79,6 @@ class PdfService {
                   pw.Divider(thickness: 1, color: PdfColors.grey300),
                   pw.SizedBox(height: 20),
 
-                  // Patient Details Section
                   pw.Text(
                     'Patient Details',
                     style: pw.TextStyle(
@@ -123,7 +121,7 @@ class PdfService {
                   ),
                   pw.SizedBox(height: 30),
 
-                  // Treatment Table Section
+                  
                   pw.Text(
                     'Treatment',
                     style: pw.TextStyle(
@@ -147,7 +145,7 @@ class PdfService {
                           pw.Text(
                             '',
                             style: pw.TextStyle(font: fontBold),
-                          ), // Hidden but for alignment
+                          ), 
                           pw.Padding(
                             padding: const pw.EdgeInsets.symmetric(vertical: 4),
                             child: pw.Text(
@@ -273,7 +271,7 @@ class PdfService {
                             '₹0',
                             fontBold,
                             font,
-                          ), // Static or from value
+                          ), 
                           _buildTotalRow(
                             'Advance',
                             '₹${advance.toInt()}',
@@ -300,7 +298,7 @@ class PdfService {
 
                   pw.Spacer(),
 
-                  // Footer Section
+                  
                   pw.Center(
                     child: pw.Column(
                       children: [
@@ -329,7 +327,7 @@ class PdfService {
                           ),
                         ),
                         pw.SizedBox(height: 20),
-                        // Signature placeholder - squiggle
+                      
                         pw.Container(
                           height: 40,
                           width: 100,

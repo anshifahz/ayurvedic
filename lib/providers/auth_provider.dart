@@ -30,7 +30,7 @@ class AuthProvider with ChangeNotifier {
     } catch (e) {
       _isLoading = false;
       notifyListeners();
-      return false; // Or rethrow to handle in UI
+      return false; 
     }
   }
 
